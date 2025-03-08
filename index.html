@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RecoverSmart</title>
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header 
+  style="
+    position: relative; 
+    height: 100px; 
+    background-color: hwb(184, 14.12%, 27.06%);
+    color: #fff9f0; 
+    padding: 0 20px;
+    margin-top: 20px;
+  "
+>
+  <!-- Banner pinned to the top-left -->
+  <img
+    src="recoverSmartBanner.png" 
+    alt="RecoverSmart Banner"
+    style="
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+    "
+  />
+
+  <!-- Text centered horizontally (on the x-axis) -->
+  <p
+    style="
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 0;
+      line-height: 100px;
+      width: 100%;
+      text-align: center;
+      font-size: 25px;
+    "
+  >
+    An interactive injury identification and treatment guide
+  </p>
+</header>
+
+  <!-- WRAPPER for sidebars + main content -->
+  <div class="page-layout">
+    
+<!-- LEFT SIDEBAR: Search History -->
+  <aside class="sidebar left-sidebar">
+  <h2>Search History</h2>
+  <p class="sidebar-note">Recently viewed injuries:</p>
+  <ul id="searchHistory"></ul>
+
+  <!-- New button to clear the saved searches -->
+  <button onclick="clearSearchHistory()">Reset Search History</button>
+</aside>
+
+
+    
+
+    <!-- MAIN CONTENT (Your Original Code, Unchanged) -->
+    <main>
+      <!-- Body Map Image -->
+      <div class="body-map-container">
+        <p class="instructions">
+          Click on any body part in the image below to see potential injuries and recommended treatments.
+        </p>
+
+        <div class="image-wrap">
+          <img 
+            src="muscular_system_front_back.png"
+            usemap="#bodyMap" 
+            alt="Body Map (Front & Back)" 
+            width="612" 
+            height="543"
+          />
+
+          <!-- 2) Hotspot overlays, each matching an <area> circle -->
+
+          <!-- FRONT HEAD -->
+          <div class="hotspot"
+               style="top: 20px; left: 140px; width: 50px; height: 50px;"
+               onclick="showInjuryOptions('head')">
+          </div>
+
+          <!--RIGHT SHOULDER -->
+          <div class="hotspot"
+               style="top: 95px; left: 85px; width: 40px; height: 40px;"
+               onclick="showInjuryOptions('shoulder')">
+          </div>
+
+          <!-- LEFT SHOULDER  -->
+          <div class="hotspot"
+               style="top: 95px; left: 195px; width: 40px; height: 40px;"
+               onclick="showInjuryOptions('shoulder')">
+          </div>
+
+          <!-- RIGHT KNEE -->
+          <div class="hotspot"
+               style="top: 350px; left: 110px; width: 40px; height: 40px;"
+               onclick="showInjuryOptions('knee')">
+          </div>
+
+          <!-- LEFT KNEE -->
+          <div class="hotspot"
+               style="top: 350px; left: 190px; width: 40px; height: 40px;"
+               onclick="showInjuryOptions('knee')">
+          </div>
+
+          <!-- RIGHT ANKLE -->
+          <div class="hotspot"
+               style="top: 450px; left: 100px; width: 40px; height: 40px;"
+               onclick="showInjuryOptions('ankle')">
+          </div>
+
+          <!-- LEFT ANKLE -->
+          <div class="hotspot"
+               style="top: 450px; left: 205px; width: 40px; height: 40px;"
+               onclick="showInjuryOptions('ankle')">
+          </div>
+
+          <!-- BACK HEAD  -->
+          <div class="hotspot"
+               style="top: 20px; left: 422px; width: 50px; height: 50px;"
+               onclick="showInjuryOptions('headBack')">
+          </div>
+
+          <!-- BACK SHOULDERS -->
+          <div class="hotspot"
+               style="top: 85px; left: 370px; width: 40px; height: 40px;"
+               onclick="showInjuryOptions('shoulderBack')">
+          </div>
+
+          <!-- BACK SHOULDER -->
+          <div class="hotspot"
+               style="top: 85px; left: 490px; width: 40px; height: 40px;"
+               onclick="showInjuryOptions('shoulderBack')">
+          </div>
+
+          <!-- BACK UPPER -->
+          <div class="hotspot"
+               style="top: 100px; left: 418px; width: 60px; height: 60px;"
+               onclick="showInjuryOptions('upperBack')">
+          </div>
+
+          <!-- BACK LOWER  -->
+          <div class="hotspot"
+               style="top: 160px; left: 418px; width: 60px; height: 60px;"
+               onclick="showInjuryOptions('lowerBack')">
+          </div>
+
+          <!-- GLUTES -->
+          <div class="hotspot"
+               style="top: 230px; left: 418px; width: 60px; height: 60px;"
+               onclick="showInjuryOptions('glutes')">
+          </div>
+
+          <!-- RIGHT HAMSTRING  -->
+          <div class="hotspot"
+               style="top: 310px; left: 385px; width: 50px; height: 50px;"
+               onclick="showInjuryOptions('hamstrings')">
+          </div>
+
+          <!-- LEFT HAMSTRING  -->
+          <div class="hotspot"
+               style="top: 310px; left: 460px; width: 50px; height: 50px;"
+               onclick="showInjuryOptions('hamstrings')">
+          </div>
+
+          <!-- RIGHT CALF  -->
+          <div class="hotspot"
+               style="top: 400px; left: 370px; width: 50px; height: 50px;"
+               onclick="showInjuryOptions('calf')">
+          </div>
+
+          <!-- LEFT CALF -->
+          <div class="hotspot"
+               style="top: 400px; left: 470px; width: 50px; height: 50px;"
+               onclick="showInjuryOptions('calf')">
+          </div>
+          <!-- Right elbow  -->
+          <div class="hotspot"
+               style="top: 160px; left: 350px; width: 50px; height: 50px;"
+               onclick="showInjuryOptions('elbow')">
+          </div>
+          
+          <!-- Left elbow -->
+          <div class="hotspot"
+               style="top: 160px; left: 490px; width: 50px; height: 50px;"
+               onclick="showInjuryOptions('elbow')">
+          </div>          
+
+          <!-- Stomach  -->
+          <div class="hotspot"
+               style="top: 170px; left: 130px; width: 70px; height: 70px;"
+               onclick="showInjuryOptions('stomach')">
+          </div>
+
+          <div class="hotspot"
+               style="top: 240px; left: 50px; width: 30px; height: 30px;"
+               onclick="showInjuryOptions('wrist')">
+          </div>
+          
+          <div class="hotspot"
+               style="top: 240px; left: 250px; width: 30px; height: 30px;"
+               onclick="showInjuryOptions('wrist')">
+          </div>                
+        </div> <!-- end .image-wrap -->
+
+        <div class="hotspot"
+             style="top: 475px; left: 660px; width: 50px; height: 50px;"
+             onclick="showInjuryOptions('quadriceps')">
+   </div>
+        <div class="hotspot"
+             style="top: 475px; left: 725px; width: 50px; height: 50px;"
+             onclick="showInjuryOptions('quadriceps')">
+   </div>
+         
+        <div class="hotspot"
+             style="top: 290px; left: 680px; width: 60px; height: 60px;"
+             onclick="showInjuryOptions('chest')">
+   </div>
+      
+
+      <!-- Dropdown for Injuries -->
+      <div class="dropdown-section" id="injuryDropdownSection">
+        <h2 id="bodyPartTitle">Injury Options</h2>
+        <label for="injurySelect">Select your issue:</label>
+        <select id="injurySelect" onchange="showTreatment()">
+          <option value="">-- Please choose an option --</option>
+        </select>
+        <button onclick="resetSelection()">Reset</button>
+      </div>
+
+      <!-- Treatment Section -->
+      <div class="treatment-section" id="treatmentSection">
+        <h2>Treatment Recommendations</h2>
+        <div id="treatmentDetails"></div>
+        <button onclick="printRecommendations()">Print Recommendations</button>
+      </div>
+    </main>
+    
+    <!-- RIGHT SIDEBAR: Extra Content / Tips -->
+    <aside class="sidebar right-sidebar">
+      <h2>Wellness Tips</h2>
+      <ul>
+        <li>Stay hydrated</li>
+        <li>Warm up before exercise</li>
+        <li>Stretch regularly</li>
+        <li>Maintain good posture</li>
+      </ul>
+    </aside>
+  </div>
+  
+  <!-- FOOTER (Unchanged) -->
+  <footer>
+    <p>&copy; 2025 RecoverSmart.</p>
+  </footer>
+
+  <!-- Link to external JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>
