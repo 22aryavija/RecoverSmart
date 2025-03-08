@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>RecoverSmart</title>
-
+  <!-- Link to external CSS file -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,7 +18,7 @@
     margin-top: 20px;
   "
 >
-
+  <!-- Banner pinned to the top-left -->
   <img
     src="recoverSmartBanner.png" 
     alt="RecoverSmart Banner"
@@ -30,7 +30,7 @@
     "
   />
 
-
+  <!-- Text centered horizontally (on the x-axis) -->
   <p
     style="
       position: absolute;
@@ -48,7 +48,7 @@
   </p>
 </header>
 
-
+  <!-- WRAPPER for sidebars + main content -->
   <div class="page-layout">
     
 <!-- LEFT SIDEBAR: Search History -->
@@ -57,14 +57,16 @@
   <p class="sidebar-note">Recently viewed injuries:</p>
   <ul id="searchHistory"></ul>
 
-
+  <!-- New button to clear the saved searches -->
   <button onclick="clearSearchHistory()">Reset Search History</button>
 </aside>
 
 
     
 
-
+    <!-- MAIN CONTENT (Your Original Code, Unchanged) -->
+    <main>
+      <!-- Body Map Image -->
       <div class="body-map-container">
         <p class="instructions">
           Click on any body part in the image below to see potential injuries and recommended treatments.
@@ -79,7 +81,7 @@
             height="543"
           />
 
-
+          <!-- 2) Hotspot overlays, each matching an <area> circle -->
 
           <!-- FRONT HEAD -->
           <div class="hotspot"
@@ -199,33 +201,33 @@
                style="top: 170px; left: 130px; width: 70px; height: 70px;"
                onclick="showInjuryOptions('stomach')">
           </div>
-          <!--Right Wrist-->
+
           <div class="hotspot"
                style="top: 240px; left: 50px; width: 30px; height: 30px;"
                onclick="showInjuryOptions('wrist')">
           </div>
-          <!--Left Wrist-->          
+          
           <div class="hotspot"
                style="top: 240px; left: 250px; width: 30px; height: 30px;"
                onclick="showInjuryOptions('wrist')">
           </div>                
-        </div> 
+
+          <!--Right Quad-->
+        <div class="hotspot"
+             style="top: 270px; left: 100px; width: 50px; height: 50px;"
+             onclick="showInjuryOptions('quadriceps')">
+   </div>
+          <!--Left Quad-->
+        <div class="hotspot"
+             style="top: 270px; left: 180px; width: 50px; height: 50px;"
+             onclick="showInjuryOptions('quadriceps')">
+   </div>
           <!--Chest-->
         <div class="hotspot"
-             style="top: 475px; left: 130px; width: 50px; height: 50px;"
-             onclick="showInjuryOptions('quadriceps')">
-   </div>
-          <!--Right Quads-->        
-        <div class="hotspot"
-             style="top: 475px; left: 110px; width: 50px; height: 50px;"
-             onclick="showInjuryOptions('quadriceps')">
-   </div>
-          <!--Left Quad-->         
-        <div class="hotspot"
-             style="top: 290px; left: 190px; width: 60px; height: 60px;"
+             style="top: 100px; left: 135px; width: 60px; height: 60px;"
              onclick="showInjuryOptions('chest')">
    </div>
-      
+</div> <!-- end .image-wrap -->      
 
       <!-- Dropdown for Injuries -->
       <div class="dropdown-section" id="injuryDropdownSection">
@@ -266,3 +268,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+
